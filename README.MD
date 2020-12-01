@@ -1,19 +1,27 @@
-### 1.初始化项目
+### 1.安装
 
 ```
-yarn init -y
+yarn add @lin/useFetch
+or
+npm install @lin/useFetch --save
 ```
 
-### 2.安装依赖
+### 2.开始使用
 
 ```
-yarn add webpack webpack-cli webpack-dev-server webpack-merge webpack-node-externals @babel/core @hot-loader/react-dom @babel/preset-env @babel/preset-react babel-loader clean-webpack-plugin html-webpack-plugin terser-webpack-plugin
+const App = () => {
+  const [result, isLoading, sendFetch] = useFetch({
+    url: '/dangerDevices',
+  });
 
-yarn add react react-dom
+  if (isLoading) return <div>loading...</div>;
+
+  return (
+    <div>
+      <div>result:{JSON.stringify(result)}</div>
+      <button onClick={sendFetch}>重新加载</button>
+    </div>
+  );
+};
+
 ```
-
-### 3.准备文件夹目录
-
-public/index.html
-script/webpack.[base/dev/prod]config.js
-src/hooks
