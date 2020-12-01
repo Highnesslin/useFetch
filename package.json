@@ -1,5 +1,5 @@
 {
-  "name": "@lin/use-fetch",
+  "name": "r-hook-fetch",
   "version": "1.0.0",
   "main": "lib/useFetch.js",
   "author": "Linhao<2212477518@qq.com>",
