@@ -1,6 +1,6 @@
 // 自定义fetchhook,封装组件卸载自动结束未完成的请求功能和loading功能
 import { useState, useEffect, useRef } from 'react';
-import fetch from '../utils/fetch';
+import _fetch from '../utils/fetch';
 
 const useFetch = ({ url, params, loading = true }) => {
   // 全局设定 AbortController
@@ -14,14 +14,14 @@ const useFetch = ({ url, params, loading = true }) => {
     abortController.current = new AbortController();
 
     loading && setIsLoading(true); // 开启loading
-
-    fetch({
+    _fetch({
       url,
       params,
       signal: abortController.current.signal,
     })
       .then(response => {
         loading && setIsLoading(false);
+        console.log('response,', response);
         setResult(response);
       })
       .catch(() => loading && setIsLoading(false));

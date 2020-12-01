@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import init from '../__mocks__';
 
-import useFetch from './hooks/useFetch';
+import useFetch from './lib/useFetch';
 
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
