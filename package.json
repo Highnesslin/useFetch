@@ -1,8 +1,9 @@
 {
-  "name": "r-hook-fetch",
+  "name": "@highnesslin/usefetch",
+  "private": false,
   "version": "1.0.0",
   "main": "lib/useFetch.js",
-  "author": "Linhao<2212477518@qq.com>",
+  "author": "Linhao <2212477518@qq.com>",
   "license": "MIT",
   "scripts": {
     "build": "webpack --config ./scripts/webpack.prod.config.js",
@@ -32,5 +33,23 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
     "webpack-node-externals": "^2.5.0"
-  }
+  },
+  "description": "fetch + hook",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Highnesslin/useFetch.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "fetch",
+    "http"
+  ],
+  "bugs": {
+    "url": "https://github.com/Highnesslin/useFetch/issues"
+  },
+  "homepage": "https://github.com/Highnesslin/useFetch#readme"
 }

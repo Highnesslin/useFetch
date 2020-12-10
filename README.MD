@@ -1,12 +1,4 @@
-### 1.安装
-
-```
-yarn add @lin/useFetch
-or
-npm install @lin/useFetch --save
-```
-
-### 2.开始使用
+### 使用
 
 ```
 const App = () => {
