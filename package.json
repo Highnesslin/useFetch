@@ -35,9 +35,6 @@
     "webpack-merge": "^5.0.9",
     "webpack-node-externals": "^2.5.0"
   },
-<<<<<<< HEAD
-  "dependencies": {}
-=======
   "description": "fetch + hook",
   "directories": {
     "lib": "lib"
@@ -56,5 +53,4 @@
     "url": "https://github.com/Highnesslin/useFetch/issues"
   },
   "homepage": "https://github.com/Highnesslin/useFetch#readme"
->>>>>>> eb64ca171e84bb217130d927b6546b6d4601deb6
 }
