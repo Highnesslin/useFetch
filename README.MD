@@ -1,10 +1,4 @@
-### 1.安装
-
-```
-npm install r-hook-fetch --save
-```
-
-### 2.开始使用
+### 使用
 
 ```
 const App = () => {
