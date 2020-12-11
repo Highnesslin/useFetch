@@ -1,6 +1,6 @@
 {
-  "name": "r-hook-fetch",
-  "version": "1.0.0",
+  "name": "@highnesslin/use-fetch",
+  "version": "1.0.2",
   "main": "lib/useFetch.js",
   "author": "Linhao<2212477518@qq.com>",
   "license": "MIT",
@@ -23,6 +23,7 @@
     "html-webpack-plugin": "^4.5.0",
     "isomorphic-fetch": "^3.0.0",
     "jest": "^26.6.3",
+    "node-fetch": "^2.6.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-test-renderer": "^17.0.1",
@@ -32,5 +33,6 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
     "webpack-node-externals": "^2.5.0"
-  }
+  },
+  "dependencies": {}
 }

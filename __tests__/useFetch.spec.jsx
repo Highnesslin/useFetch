@@ -19,7 +19,20 @@ describe('useFetch', () => {
     { delay: 2000 }
   );
 
-  it('isLoading', () => {
+  it('no loading', () => {
+    const fetchRes = renderHook(() =>
+      useFetch({
+        url: 'http://127.0.0.1/dangerDevices',
+        loading: false,
+      })
+    );
+
+    const [, isLoading] = fetchRes.result.current;
+
+    expect(isLoading).toBe(false);
+  });
+
+  it('has loading', () => {
     const fetchRes = renderHook(() => useFetch({ url: 'http://127.0.0.1/dangerDevices' }));
 
     const [, isLoading] = fetchRes.result.current;

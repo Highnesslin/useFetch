@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import useFetch from './hooks/useFetch';
 
 import init from '../__mocks__';
 
-import useFetch from './lib/useFetch';
+const token = 'token';
 
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
     url: '/dangerDevices',
+    ...(token
+      ? {
+          headers: {
+            Authorization: token,
+          },
+        }
+      : {}),
   });
 
   if (isLoading) return <div>loading...</div>;

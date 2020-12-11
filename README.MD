@@ -1,9 +1,7 @@
 ### 1.安装
 
 ```
-yarn add @lin/useFetch
-or
-npm install @lin/useFetch --save
+npm install r-hook-fetch --save
 ```
 
 ### 2.开始使用

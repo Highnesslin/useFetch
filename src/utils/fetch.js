@@ -1,6 +1,4 @@
-export default function ({ url, params, signal }) {
-  const token = 'token';
-
+export default function ({ url, params, headers, signal }) {
   let argsStr = ''; // url拼接参数
   if (params) {
     for (let key in params) {
@@ -9,14 +7,10 @@ export default function ({ url, params, signal }) {
     argsStr = '?' + argsStr.substr(0, argsStr.length - 1);
   }
 
+  console.log('headers', headers);
+
   return fetch(`${url}${params || ''}`, {
-    ...(token
-      ? {
-          headers: {
-            Authorization: 'token',
-          },
-        }
-      : {}),
+    ...(headers ? headers : {}),
     ...(signal ? signal : {}),
   })
     .then(response => response.json())

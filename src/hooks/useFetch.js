@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import _fetch from '../utils/fetch';
 
-const useFetch = ({ url, params, loading = true }) => {
+const useFetch = ({ url, params, headers, loading = true }) => {
   // 全局设定 AbortController
   const abortController = useRef();
 
@@ -17,6 +17,7 @@ const useFetch = ({ url, params, loading = true }) => {
     _fetch({
       url,
       params,
+      headers,
       signal: abortController.current.signal,
     })
       .then(response => {
