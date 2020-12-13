@@ -2,8 +2,17 @@
 
 ```
 const App = () => {
+  const {token} = userLogin();
+
   const [result, isLoading, sendFetch] = useFetch({
     url: '/dangerDevices',
+    ...(token
+      ? {
+          headers: {
+            Authorization: token,
+          },
+        }
+      : {}),
   });
 
   if (isLoading) return <div>loading...</div>;
