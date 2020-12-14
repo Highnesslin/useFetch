@@ -8,6 +8,7 @@ const token = 'token';
 
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
+    method: 'get',
     url: '/dangerDevices',
     ...(token
       ? {
@@ -20,10 +21,20 @@ const App = () => {
 
   if (isLoading) return <div>loading...</div>;
 
+  window.sendFetch = sendFetch;
+
   return (
     <div>
       <div>result:{JSON.stringify(result)}</div>
-      <button onClick={sendFetch}>重新加载</button>
+      <button
+        onClick={() =>
+          sendFetch({
+            name: 'boy',
+          })
+        }
+      >
+        重新加载
+      </button>
     </div>
   );
 };

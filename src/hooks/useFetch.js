@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import _fetch from '../utils/fetch';
 
-const useFetch = ({ url, params, headers, loading = true }) => {
+const useFetch = ({ url, method = 'get', params = {}, headers, loading = true }) => {
   // 全局设定 AbortController
   const abortController = useRef();
 
@@ -10,13 +10,18 @@ const useFetch = ({ url, params, headers, loading = true }) => {
   const [result, setResult] = useState();
 
   // 发起请求
-  const sendFetch = () => {
+  const sendFetch = (newParams = {}) => {
     abortController.current = new AbortController();
 
     loading && setIsLoading(true); // 开启loading
+
     _fetch({
       url,
-      params,
+      method,
+      params: {
+        ...params,
+        ...newParams,
+      },
       headers,
       signal: abortController.current.signal,
     })
@@ -25,7 +30,10 @@ const useFetch = ({ url, params, headers, loading = true }) => {
         console.log('response,', response);
         setResult(response);
       })
-      .catch(() => loading && setIsLoading(false));
+      .catch(err => {
+        console.log('err', err);
+        loading && setIsLoading(false);
+      });
   };
 
   // 组件生命周期
@@ -36,6 +44,8 @@ const useFetch = ({ url, params, headers, loading = true }) => {
       abortController.current?.abort();
     };
   }, []);
+
+  window.sendFetch = sendFetch;
 
   return [result, isLoading, sendFetch];
 };
