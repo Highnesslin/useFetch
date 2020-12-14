@@ -10,7 +10,7 @@ const token =
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
     method: 'get',
-    url: '/api/anran-check/safe/accident/page',
+    url: '/api/anran-manage/screen/region/bottle/stat',
     ...(token
       ? {
           headers: {
