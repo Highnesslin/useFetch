@@ -4,7 +4,7 @@ import useFetch from './hooks/useFetch';
 
 import init from '../__mocks__';
 
-const token = 'token';
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJ1c2VyX25hbWUiOi';
 
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
@@ -13,7 +13,7 @@ const App = () => {
     ...(token
       ? {
           headers: {
-            Authorization: token,
+            'Blade-Auth': 'bearer ' + token,
           },
         }
       : {}),

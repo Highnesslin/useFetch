@@ -28,6 +28,12 @@ const webpackConfigDev = {
     open: true,
     host: 'localhost',
     port: 8080,
+    proxy: {
+      '/api': {
+        target: 'http://nps.0t.com.cn:10556',
+        pathRewrite: { '^/api': '' },
+      },
+    },
   },
 
   plugins: [
