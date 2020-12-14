@@ -15,7 +15,7 @@ const useFetch = ({ url, method = 'get', params = {}, headers, loading = true })
 
     loading && setIsLoading(true); // 开启loading
 
-    _fetch({
+    return _fetch({
       url,
       method,
       params: {
@@ -27,11 +27,10 @@ const useFetch = ({ url, method = 'get', params = {}, headers, loading = true })
     })
       .then(response => {
         loading && setIsLoading(false);
-        console.log('response,', response);
         setResult(response);
+        return response;
       })
-      .catch(err => {
-        console.log('err', err);
+      .finally(() => {
         loading && setIsLoading(false);
       });
   };
@@ -44,8 +43,6 @@ const useFetch = ({ url, method = 'get', params = {}, headers, loading = true })
       abortController.current?.abort();
     };
   }, []);
-
-  window.sendFetch = sendFetch;
 
   return [result, isLoading, sendFetch];
 };

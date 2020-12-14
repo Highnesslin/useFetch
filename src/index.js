@@ -4,12 +4,13 @@ import useFetch from './hooks/useFetch';
 
 import init from '../__mocks__';
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJ1c2VyX25hbWUiOi';
+const token =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJ1c2VyX25hbWUiOiIxMzk2NzE5MzMwMCIsInJlYWxfbmFtZSI6IumrmOWzsCIsImF2YXRhciI6IiIsImF1dGhvcml0aWVzIjpbImdhc19zYWZldHlfb2ZmaWNlIl0sImNsaWVudF9pZCI6InN3b3JkIiwicm9sZV9uYW1lIjoiZ2FzX3NhZmV0eV9vZmZpY2UiLCJsaWNlbnNlIjoicG93ZXJlZCBieSBibGFkZXgiLCJwb3N0X2lkIjoiMTMyMjA2NjE4NDY0MDc0MTM3NyIsInVzZXJfaWQiOiIxMzEwNzcwOTYyOTEzMTUzMDI2Iiwicm9sZV9pZCI6IjEzMjkyNDU2MTA1MTcxMDI1OTMiLCJzY29wZSI6WyJhbGwiXSwibmlja19uYW1lIjoi6auY5bOwIiwib2F1dGhfaWQiOiIiLCJkZXRhaWwiOnsidHlwZSI6IndlYiJ9LCJleHAiOjE2MDg3OTY5ODcsImRlcHRfaWQiOiIxMzA5MzcxODc4MDc1MzQyODUwIiwianRpIjoiMzEwMTBmZGItNjE5Yy00YjkyLWJlNTEtMTA2YTQ2YmU0ZTRiIiwiYWNjb3VudCI6IjEzOTY3MTkzMzAwIn0.3DfR1Y7dTkpCTV7muhfmrUuL0ZLYwO_eUUc15E6vgUg';
 
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
     method: 'get',
-    url: '/dangerDevices',
+    url: '/api/anran-check/safe/accident/page',
     ...(token
       ? {
           headers: {
@@ -21,8 +22,6 @@ const App = () => {
 
   if (isLoading) return <div>loading...</div>;
 
-  window.sendFetch = sendFetch;
-
   return (
     <div>
       <div>result:{JSON.stringify(result)}</div>
@@ -30,6 +29,8 @@ const App = () => {
         onClick={() =>
           sendFetch({
             name: 'boy',
+          }).then(res => {
+            console.log('res', res);
           })
         }
       >
@@ -45,6 +46,6 @@ if (module.hot) {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  init();
+  // init();
 }
 ReactDOM.render(<App />, document.getElementById('root'));
