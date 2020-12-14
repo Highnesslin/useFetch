@@ -11,7 +11,10 @@ function getParams(params) {
   let argsStr = ''; // url拼接参数
   if (params && JSON.stringify(params) !== '{}') {
     for (let key in params) {
-      if ([undefined, null].includes(params[key])) continue;
+      if ([undefined, null].includes(params[key])) {
+        console.log('拦截到undefined');
+        continue;
+      }
 
       argsStr += key + '=' + params[key] + '&';
     }
