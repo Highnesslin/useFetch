@@ -10,7 +10,15 @@ const token =
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
     method: 'get',
-    url: '/api/anran-manage/screen/region/bottle/stat',
+    url: '/api/anran-check/screen/check/list',
+    params: {
+      checkTarget: 1,
+      checkType: 1,
+      dateType: undefined,
+      status: undefined,
+      current: 1,
+      size: 10,
+    },
     ...(token
       ? {
           headers: {
@@ -40,7 +48,7 @@ const App = () => {
   );
 };
 
-//局部热更新
+// 局部热更新
 if (module.hot) {
   module.hot.accept();
 }

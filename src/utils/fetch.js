@@ -11,6 +11,8 @@ function getParams(params) {
   let argsStr = ''; // url拼接参数
   if (params && JSON.stringify(params) !== '{}') {
     for (let key in params) {
+      if ([undefined, null].includes(params[key])) continue;
+
       argsStr += key + '=' + params[key] + '&';
     }
     argsStr = '?' + argsStr.substr(0, argsStr.length - 1);

@@ -33,7 +33,8 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
-    "webpack-node-externals": "^2.5.0"
+    "webpack-node-externals": "^2.5.0",
+    "husky": "^4.3.6"
   },
   "description": "fetch + hook",
   "directories": {
@@ -49,6 +50,11 @@
     "fetch",
     "http"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build"
+    }
+  },
   "bugs": {
     "url": "https://github.com/Highnesslin/useFetch/issues"
   },
