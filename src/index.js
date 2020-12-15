@@ -9,6 +9,7 @@ const token =
 
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
+    immediate: false,
     method: 'get',
     url: '/api/anran-check/screen/check/list',
     params: {

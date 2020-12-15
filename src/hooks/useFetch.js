@@ -2,7 +2,14 @@
 import { useState, useEffect, useRef } from 'react';
 import _fetch from '../utils/fetch';
 
-const useFetch = ({ url, method = 'get', params = {}, headers, loading = true }) => {
+const useFetch = ({
+  immediate = true,
+  url,
+  method = 'get',
+  params = {},
+  headers,
+  loading = true,
+}) => {
   // 全局设定 AbortController
   const abortController = useRef();
 
@@ -37,7 +44,9 @@ const useFetch = ({ url, method = 'get', params = {}, headers, loading = true })
 
   // 组件生命周期
   useEffect(() => {
-    sendFetch();
+    if (immediate) {
+      sendFetch();
+    }
 
     return () => {
       abortController.current?.abort();
