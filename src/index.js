@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import useFetch from './hooks/useFetch';
+// import useFetch from '../lib/useFetch';
 
 import init from '../__mocks__';
 

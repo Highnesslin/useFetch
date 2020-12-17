@@ -1,5 +1,6 @@
 // 自定义fetchhook,封装组件卸载自动结束未完成的请求功能和loading功能
 import { useState, useEffect, useRef } from 'react';
+import 'abortcontroller-polyfill/dist/polyfill-patch-fetch'; // 兼容
 import _fetch from '../utils/fetch';
 
 const useFetch = ({

@@ -5,6 +5,20 @@
   "main": "lib/useFetch.js",
   "author": "Linhao <2212477518@qq.com>",
   "license": "MIT",
+  "description": "fetch + hook",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Highnesslin/useFetch.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "fetch",
+    "http"
+  ],
   "scripts": {
     "build": "webpack --config ./scripts/webpack.prod.config.js",
     "dev": "webpack-dev-server --config ./scripts/webpack.dev.config.js",
@@ -16,7 +30,6 @@
     "@babel/preset-react": "^7.12.7",
     "@hot-loader/react-dom": "^17.0.0",
     "@testing-library/react-hooks": "^3.4.2",
-    "abortcontroller-polyfill": "^1.5.0",
     "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -37,20 +50,9 @@
     "webpack-merge": "^5.0.9",
     "webpack-node-externals": "^2.5.0"
   },
-  "description": "fetch + hook",
-  "directories": {
-    "lib": "lib"
+  "dependencies": {
+    "abortcontroller-polyfill": "^1.5.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Highnesslin/useFetch.git"
-  },
-  "keywords": [
-    "react",
-    "hooks",
-    "fetch",
-    "http"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "yarn build"

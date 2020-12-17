@@ -1,5 +1,3 @@
-import 'abortcontroller-polyfill/dist/polyfill-patch-fetch';
-
 export default function ({ url, method, params, headers, signal }) {
   const body = method === 'POST' ? JSON.stringify(params) : null;
   const fetchUrl = method === 'POST' ? url : url + getParams(params);
