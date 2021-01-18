@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom';
 import useFetch from './hooks/useFetch';
 // import useFetch from '../lib/useFetch';
 
-import init from '../__mocks__';
+// import initMock from '../__mocks__';
 
-const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJ1c2VyX25hbWUiOiIxMzk2NzE5MzMwMCIsInJlYWxfbmFtZSI6IumrmOWzsCIsImF2YXRhciI6IiIsImF1dGhvcml0aWVzIjpbImdhc19zYWZldHlfb2ZmaWNlIl0sImNsaWVudF9pZCI6InN3b3JkIiwicm9sZV9uYW1lIjoiZ2FzX3NhZmV0eV9vZmZpY2UiLCJsaWNlbnNlIjoicG93ZXJlZCBieSBibGFkZXgiLCJwb3N0X2lkIjoiMTMyMjA2NjE4NDY0MDc0MTM3NyIsInVzZXJfaWQiOiIxMzEwNzcwOTYyOTEzMTUzMDI2Iiwicm9sZV9pZCI6IjEzMjkyNDU2MTA1MTcxMDI1OTMiLCJzY29wZSI6WyJhbGwiXSwibmlja19uYW1lIjoi6auY5bOwIiwib2F1dGhfaWQiOiIiLCJkZXRhaWwiOnsidHlwZSI6IndlYiJ9LCJleHAiOjE2MDg3OTY5ODcsImRlcHRfaWQiOiIxMzA5MzcxODc4MDc1MzQyODUwIiwianRpIjoiMzEwMTBmZGItNjE5Yy00YjkyLWJlNTEtMTA2YTQ2YmU0ZTRiIiwiYWNjb3VudCI6IjEzOTY3MTkzMzAwIn0.3DfR1Y7dTkpCTV7muhfmrUuL0ZLYwO_eUUc15E6vgUg';
+const token = 'test';
 
 const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
     immediate: false,
     method: 'get',
-    url: '/api/anran-check/screen/check/list',
+    url: '/api/trueExam.do?id=161093584899912011213',
     params: {
       checkTarget: 1,
       checkType: 1,

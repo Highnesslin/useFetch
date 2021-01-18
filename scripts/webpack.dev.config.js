@@ -30,8 +30,9 @@ const webpackConfigDev = {
     port: 8080,
     proxy: {
       '/api': {
-        target: 'http://nps.0t.com.cn:10556',
+        target: 'http://api.crap.cn/mock',
         pathRewrite: { '^/api': '' },
+        changeOrigin: true,
       },
     },
   },
