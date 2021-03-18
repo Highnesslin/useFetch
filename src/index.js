@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import useFetch from './hooks/useFetch';
-// import useFetch from '../lib/useFetch';
+// import useFetch from './hooks/useFetch';
+import useFetch from '../lib/useFetch';
 
 // import initMock from '../__mocks__';
 
@@ -11,14 +11,14 @@ const App = () => {
   const [result, isLoading, sendFetch] = useFetch({
     immediate: false,
     method: 'get',
-    url: '/api/trueExam.do?id=161093584899912011213',
+    url: 'http://localhost:9000/qr/records', // '/api/trueExam.do?id=161093584899912011213',
     params: {
       checkTarget: 1,
       checkType: 1,
       dateType: undefined,
       status: undefined,
       current: 1,
-      size: 10,
+      size: 8,
     },
     ...(token
       ? {
